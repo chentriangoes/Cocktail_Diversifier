@@ -14,5 +14,3 @@ We are using 2 public APIs which can be found in the script.js file.
 ![two](Assets/images/recipeTwo.png)
 
 These above are our rough ideas of what we want our web app to look like
-
-
