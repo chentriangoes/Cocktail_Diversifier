@@ -1,35 +1,35 @@
+//setting constants by getting element IDs
+const cocktailSearch = document.getElementById('cocktailSearch');
+const mealSearch = document.getElementById('mealSearch');
 
-function getApi () {
+
+const mealApi = "https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata";
+
+function getDrinkApi(drinkName) {
+  const drinkApi = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drinkName;
     //this is the fetch request will get us the search results for the cocktail and meal receipes
-    
-    var requestUrl = "";
 
-    fetch(requestUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data)
-      //Loop over the data to generate a table, each table row will have a link to the repo url
-      for (var i = 0; i < data.length; i++) {
-        // Creating elements, tablerow, tabledata, and anchor
-        var createTableRow = document.createElement('tr');
-        var tableData = document.createElement('td');
-        var link = document.createElement('a');
-
-        // Setting the text of link and the href of the link
-        link.textContent = data[i].html_url;
-        link.href = data[i].html_url;
-
-        // Appending the link to the tabledata and then appending the tabledata to the tablerow
-        // The tablerow then gets appended to the tablebody
-        tableData.appendChild(link);
-        createTableRow.appendChild(tableData);
-        tableBody.appendChild(createTableRow);
-      }
-    });
+    fetch(drinkApi)
+      .then(function (response) {
+        return response.json();
+      })
+      .then (function (data){ 
+        console.log(data);
+        // display to html teh results
+      });
 }
 
-fetchButton.addEventListener('click', getApi);
+cocktailSearch.addEventListener("click", function(event){
+  event.preventDefault();
 
+  var inputValue = ""; // get the input value
+  getDrinkApi(inputValue);
+})
+
+mealSearch.addEventListener("click", function(event){
+  event.preventDefault();
+  // alert ("Please type something");
+})
+
+// fetchButton.addEventListener('click', getApi);
 
