@@ -2,7 +2,7 @@
 
 # About the project
 
-This is a presentation of a server side API which includes basic understadning or Javascript functions, and css framework of Bulma. This project will also use the local storage so the user can save the recipes and when the page is refreshed the saved recipes can still be accessible.
+This is a presentation of a server side API which includes basic understanding of javascript functions, and css framework of Bulma. This project will also use the local storage so the user can save the recipes, so that when the page is refreshed the saved recipes can still be accessible.
 
 This project is intended to help a user search their favorite cocktail and meal recipes so they can get the ingredients and make the desired meal or cocktail at home with ease. 
 
