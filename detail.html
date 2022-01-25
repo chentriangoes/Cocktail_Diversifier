@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipe Finder | Details</title>
+    <!-- Link to BULMA's CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="./Assets/css/style.css">
+</head>
+
+<body class="has-navbar-fixed-top hero is-fullheight">
+    <header><!--<div class="column is-full">is-full</div>--> 
+        <section class="container is-max-desktop">
+            <h1 class="title is-1 has-text-centered">Wecome to Your Recipe Finder</h1>
+        </section>
+        
+    
+        <nav id="navbarExampleTransparentExample" class="navbar-menu">
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <button class="button is-home is-link is-light is-outlined" onclick="">HOME</button> <!--onclick for the URL and can be at javascript-->
+                        <button class="button is-SBS is-link is-light is-outlined" onclick="">SBS FOOD</button> <!--onclick for the URL and can be at javascript-->
+                        <button class="button is-Feedback is-link is-light is-outlined" onclick="">Feedback</button> <!--onclick for the URL and can be at javascript-->
+                    </div>
+                </div>
+            </div>
+        </nav>
+    
+        <section class="hero is-primary has-text-centered">
+            <div class="hero-body"> <!--https://bulma.io/documentation/layout/hero/-->
+                <p class="subtitle">
+                     Wondering what and how those tasty cocktails or meals are composed and made? 
+                 Pick up anything in your mind now and search for its recipe of which ingredients will be uncovered.
+                 Too addicted to say no? Don’t forget to save your favorites by clicking  ❤️  for your next visit.
+                </p>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section class="columns"> <!-- https://bulma.io/documentation/columns/sizes/ -->
+             <!-- https://bulma.io/documentation/layout/tiles/ -->
+                <div class="tile is-parent is-4">
+                    <div class="tile is-child box"> <!--removed it maybe-->
+                        <figure class="image is-256x256"> <!-- https://bulma.io/documentation/elements/image/ -->
+                            <img src="https://bulma.io/images/placeholders/256x256.png"> <!--replace it with the photo from the API-->
+                        </figure>
+                    </div>
+                </div>
+                
+                <div class="tile is-vertical is-parent is-8">
+                    <div class="tile is-child box">
+                        <p class="title"><strong>Martini A<!--get the input from API--></strong></p> 
+                        <p class="subtitle">description ... <!--get the input from API--></p>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <!--add links pls-->
+            <strong>TASTYT</strong> by <a href="">Jikebo Kakways, Kishan Gosrani and Yi-Tsun Chen</a>. The source code is licensed
+            <a href="https://bulma.io/">BULMA</a>. The website content
+            is licensed <a href="">*Put Something Here*</a>. <!--CC BY NC SA 4.0-->
+          </p>
+        </div>
+    </footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="./Assets/js/script.js"></script>
+</body>
+</html>
