@@ -45,13 +45,11 @@
         <section class="columns"> <!-- https://bulma.io/documentation/columns/sizes/ -->
             <div class="column is-full has-text-centered" id="cocktailSearch">
                 <p class="control is-expanded mb-4 column is-half container is-max-desktop"> <!-- https://bulma.io/documentation/form/general/ -->
-                    <input class="input is rounded is-large" type="text" placeholder="Cocktail Search">
+                    <input id="inputSearch" class="input is rounded is-large" type="text" placeholder="Cocktail Search" />
                 </p>
                    
                 <p class="control mb-6">
-                    <a class="button is-info">
-                        Search
-                    </a>
+                    <button id="searchButton" class="button is-info"> Search </button>
                 </p>
                
                 <h2 class="subtitle">
@@ -64,7 +62,7 @@
                <div class="tile is-parent is-4"><!-- https://bulma.io/documentation/layout/tiles/ -->
                    <div class="tile is-child box"> <!--removed it maybe-->
                        <figure class="image is-256x256"> <!-- https://bulma.io/documentation/elements/image/ -->
-                           <img src="https://bulma.io/images/placeholders/256x256.png"> <!--replace it with the photo from the API-->
+                           <img  src="https://bulma.io/images/placeholders/256x256.png"> <!--replace it with the photo from the API-->
                        </figure>
                    </div>
                </div>

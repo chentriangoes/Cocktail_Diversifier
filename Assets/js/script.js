@@ -1,35 +1,18 @@
-//setting constants by getting element IDs
-const cocktailSearch = document.getElementById('cocktailSearch');
-const mealSearch = document.getElementById('mealSearch');
+// 1) when user clicks search get input value
+// 2) send the user to cocktails.html page and add input value to query string
 
 
-const mealApi = "https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata";
+var searchBtnEl = document.getElementById ("searchButton");
+var inputEl = document.getElementById ("inputSearch");
 
-function getDrinkApi(drinkName) {
-  const drinkApi = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drinkName;
-    //this is the fetch request will get us the search results for the cocktail and meal receipes
 
-    fetch(drinkApi)
-      .then(function (response) {
-        return response.json();
-      })
-      .then (function (data){ 
-        console.log(data);
-        // display to html teh results
-      });
-}
+// add click listener to searchbutton
+searchBtnEl.addEventListener('click', function (event) {
+  var inputElValue = inputEl.value;
 
-cocktailSearch.addEventListener("click", function(event){
-  event.preventDefault();
+  document.location = "./cocktails.html?name=" + inputElValue;
+  // use document.location to send to cocktails.html
+  // add query string
+});
 
-  var inputValue = ""; // get the input value
-  getDrinkApi(inputValue);
-})
-
-mealSearch.addEventListener("click", function(event){
-  event.preventDefault();
-  // alert ("Please type something");
-})
-
-// fetchButton.addEventListener('click', getApi);
-
+//uri = send user to..
