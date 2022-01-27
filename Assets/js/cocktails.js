@@ -11,13 +11,12 @@ function getDrinkApi(drinkName) {
       .then (function (data){ 
         console.log(data);
         for (var i = 0; i < data.drinks.length; i++) {
-            var divEl = document.createElement("div");
+          var item = data.drinks[i];
+          var divEl = document.createElement("div");
             divEl.setAttribute("class", "tile is-2 is-parent");
             
             var sectionEl = document.createElement("section");
             sectionEl.setAttribute("class", "tile is-child box");
-
-            var item = data.drinks[i];
 
             var pEl = document.createElement("p");
             pEl.setAttribute("class", "title is-size-7 has-text-centered");
@@ -37,6 +36,17 @@ function getDrinkApi(drinkName) {
             cateEl.setAttribute("class", "has-text-centered");
             cateEl.innerHTML = item.strCategory;
 
+            var idEl = document.createElement("li");
+            idEl.setAttribute("class", "has-text-centered is-hidden"); //*hidden//
+            idEl.innerHTML = item.idDrink;
+
+            var detailEl = document.createElement("button");
+            detailEl.setAttribute("class", "button is-info");
+            //detailEl.setAttribute("id", "detailButton");
+            detailEl.innerHTML = " more ";
+
+            //<button id="searchButton" class="button is-info"> Search </button>
+
             // display to the html
             container.appendChild(divEl);
             divEl.appendChild(sectionEl);
@@ -45,6 +55,8 @@ function getDrinkApi(drinkName) {
             sectionEl.appendChild(ulEl);
             ulEl.appendChild(alcoholEl);
             ulEl.appendChild(cateEl);
+            ulEl.appendChild(idEl);
+            ulEl.appendChild(detailEl);
 
             // * pls decide if this should be here or the next page
             ulEl.innerHTML += `
@@ -54,10 +66,42 @@ function getDrinkApi(drinkName) {
                                <li><strong>${item.strIngredient4} </strong><span class="has-text-danger">${item.strMeasure4}<span></li>
                                <li><strong>${item.strIngredient5} </strong><span class="has-text-danger">${item.strMeasure5}<span></li>
                                <li><strong>${item.strIngredient6} </strong><span class="has-text-danger">${item.strMeasure6}<span></li>
-                               <li><strong>${item.strIngredient7} </strong><span class="has-text-danger">${item.strMeasure7}<span></li>`;      
+                               <li><strong>${item.strIngredient7} </strong><span class="has-text-danger">${item.strMeasure7}<span></li>`;
         } 
       });
 }
+
+                               
+var detailButton = document.getElementById("detailButton")
+
+detailButton.addEventListener('click', function(event){
+  var drinkID = document.querySelector("#drinkID");
+  document.location = "./detail.html?id=" + drinkID.textContent;
+})
+
+
+
+//var drinkEl = getElementById("item.drink");
+//drinkEl.addEventListener('click', function (event) {
+// 
+
+//  document.location = "./detail.html?id=" + drinkID;
+  // use document.location to send to cocktails.html
+  // add query string
+//});
+
+//<div class="tile is-2 is-parent"> <!-- https://bulma.io/documentation/layout/tiles/ and use javascript for it-->
+//            <section class="tile is-child box">
+//                <p class="title is-size-7 has-text-centered">Dry Matini</p>
+//                        <img src="https://www.thecocktaildb.com/images/media/drink/6ck9yi1589574317.jpg"></img> <!--replace it with the photo from the API-->
+//                    <ul> 
+//                        <li class="has-text-centered">test only</li> <!--pls remove it and use javascript for the listed item-->
+//                        <li class="has-text-centered">test only</li> <!--pls remove it and use javascript for the listed item-->
+//                    </ul>
+//                </section>
+//          </div>    
+
+
 
   var drinkName = document.location.search.split("=")[1];
 
