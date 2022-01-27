@@ -36,14 +36,13 @@ function getDrinkApi(drinkName) {
             cateEl.setAttribute("class", "has-text-centered");
             cateEl.innerHTML = item.strCategory;
 
-            var idEl = document.createElement("li");
-            idEl.setAttribute("class", "has-text-centered is-hidden"); //*hidden//
-            idEl.innerHTML = item.idDrink;
+            // var idEl = document.createElement("li");
+            // idEl.setAttribute("class", "drinkID has-text-centered is-hidden"); //*hidden//
+            // idEl.innerHTML = item.idDrink;
 
-            var detailEl = document.createElement("button");
-            detailEl.setAttribute("class", "button is-info");
-            //detailEl.setAttribute("id", "detailButton");
-            detailEl.innerHTML = " more ";
+            var detailBtnEl = document.createElement("button");
+            detailBtnEl.setAttribute("class", "detailButton button is-info");
+            detailBtnEl.textContent = " more ";
 
             //<button id="searchButton" class="button is-info"> Search </button>
 
@@ -53,33 +52,49 @@ function getDrinkApi(drinkName) {
             sectionEl.appendChild(pEl);
             sectionEl.appendChild(imgEl);
             sectionEl.appendChild(ulEl);
-            ulEl.appendChild(alcoholEl);
-            ulEl.appendChild(cateEl);
-            ulEl.appendChild(idEl);
-            ulEl.appendChild(detailEl);
+            sectionEl.appendChild(alcoholEl);
+            sectionEl.appendChild(cateEl);
+           // ulEl.appendChild(idEl);
+          
+
+              for (var i = 1; i < 8; i++) {
+                createLi(ulEl, item["strIngredient" + i], item["strMeasure" + i]);
+              }
 
             // * pls decide if this should be here or the next page
-            ulEl.innerHTML += `
-                               <li><strong>${item.strIngredient1} </strong><span class="has-text-danger">${item.strMeasure1}<span></li>
-                               <li><strong>${item.strIngredient2} </strong><span class="has-text-danger">${item.strMeasure2}<span></li>
-                               <li><strong>${item.strIngredient3} </strong><span class="has-text-danger">${item.strMeasure3}<span></li>
-                               <li><strong>${item.strIngredient4} </strong><span class="has-text-danger">${item.strMeasure4}<span></li>
-                               <li><strong>${item.strIngredient5} </strong><span class="has-text-danger">${item.strMeasure5}<span></li>
-                               <li><strong>${item.strIngredient6} </strong><span class="has-text-danger">${item.strMeasure6}<span></li>
-                               <li><strong>${item.strIngredient7} </strong><span class="has-text-danger">${item.strMeasure7}<span></li>`;
+            // ulEl.innerHTML += `
+            //                    <li><strong>${item.strIngredient1} </strong><span class="has-text-danger">${item.strMeasure1}<span></li>
+            //                    <li><strong>${item.strIngredient2} </strong><span class="has-text-danger">${item.strMeasure2}<span></li>
+            //                    <li><strong>${item.strIngredient3} </strong><span class="has-text-danger">${item.strMeasure3}<span></li>
+            //                    <li><strong>${item.strIngredient4} </strong><span class="has-text-danger">${item.strMeasure4}<span></li>
+            //                    <li><strong>${item.strIngredient5} </strong><span class="has-text-danger">${item.strMeasure5}<span></li>
+            //                    <li><strong>${item.strIngredient6} </strong><span class="has-text-danger">${item.strMeasure6}<span></li>
+            //                    <li><strong>${item.strIngredient7} </strong><span class="has-text-danger">${item.strMeasure7}<span></li>`;
+                               
+                              //  var detailButton = document.querySelector(".detailButton");
+            detailBtnEl.addEventListener('click', function(event){
+debugger;
+                // var drinkID = document.querySelector(".drinkID");
+                document.location = "./detail.html?id=" + item.idDrink; //item.idDrink; 
+              });
+
+              sectionEl.appendChild(detailBtnEl);
         } 
       });
 }
 
                                
-var detailButton = document.getElementById("detailButton")
-
-detailButton.addEventListener('click', function(event){
-  var drinkID = document.querySelector("#drinkID");
-  document.location = "./detail.html?id=" + drinkID.textContent;
-})
 
 
+function createLi(ulElInput, ingrdientName, measure) {
+  if (!ingrdientName || !measure) {
+    return;
+  }
+
+  var li = document.createElement('li');
+              li.innerHTML = `<strong>${ingrdientName} </strong><span class="has-text-danger">${measure}<span>`;
+              ulElInput.appendChild(li);
+}
 
 //var drinkEl = getElementById("item.drink");
 //drinkEl.addEventListener('click', function (event) {
