@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipe Finder | Cocktails</title>
+    <!-- Link to BULMA's CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="./Assets/css/style.css">
+</head>
+
+<body class="has-navbar-fixed-top hero is-fullheight">
+  <header class="hero"><!--<div class="column is-full">is-full</div>--> 
+    <section class="container is-max-desktop">
+        <h1 class="title is-1 has-text-centered">Life's too short for the same cocktail</h1>
+    </section>
+  
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+              <form action="./01_Home.html">
+                <input type="submit" value="HOME"/>
+            </form>
+    </nav>
+
+    <section class="hero is-primary has-text-centered">
+        <div class="hero-body"> <!-- https://bulma.io/documentation/layout/hero/ -->
+            <p class="subtitle">
+                Tired of figuring out whatto cook try our lateste cooking and recipe find to make your lives Easy ...
+             we are here to help. Don’t forget to save your favorites by clicking  ❤️  for your next visit.
+            </p>
+        </div>
+    </section>
+</header>
+
+    <main>
+        <section id="cocktail-cards" class="cocktails cards columns tile is-full is-flex-wrap-wrap"> <!-- https://bulma.io/documentation/columns/sizes/ -->
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <!--add links pls-->
+            <strong>TASTYT</strong> by <a href="">Jikebo Kakways, Kishan Gosrani and Yi-Tsun Chen</a>. The source code is licensed
+            <a href="https://bulma.io/">BULMA</a>. The website content
+            is licensed <a href="">*Put Something Here*</a>. <!--CC BY NC SA 4.0-->
+          </p>
+        </div>
+    </footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="./Assets/js/02_ListedCocktails.js"></script>
+</body>
+</html>
