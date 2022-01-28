@@ -25,7 +25,7 @@ function getDrinkApi(drinkName) {
 
         var item = data.drinks[i];
 
-        //creat a divEl and set its arritubes to "class" named tile is-2 is-parent (which is the css framework method of bulma)
+        //creates a div element and set its arritubes to "class" named tile is-2 is-parent (which is the css framework method of bulma)
 
         var divEl = document.createElement("div");
 
