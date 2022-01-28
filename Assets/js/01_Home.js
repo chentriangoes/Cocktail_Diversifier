@@ -10,7 +10,7 @@ var inputEl = document.getElementById ("inputSearch");
 searchBtnEl.addEventListener('click', function (event) {
   var inputElValue = inputEl.value;
 
-  document.location = "./cocktails.html?name=" + inputElValue;
+  document.location = "./02_ListedCocktails.html?name=" + inputElValue;
   // use document.location to send to cocktails.html
   // add query string
 });
