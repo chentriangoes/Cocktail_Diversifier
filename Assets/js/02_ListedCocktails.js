@@ -23,7 +23,7 @@ function getDrinkApi(drinkName) {
 
         // this is the length of i in the loop (like explained above -> (if 6 cocktails containing keyword search name) then the loop will create 6 cards))
 
-        var item = data.drinks[i];
+        let item = data.drinks[i];
 
         //creates a div element and set its arritubes to "class" named tile is-2 is-parent (which is the css framework method of bulma)
 
@@ -60,8 +60,13 @@ function getDrinkApi(drinkName) {
         var detailBtnEl = document.createElement("button");
 
         detailBtnEl.setAttribute("class", "button is-info");
+        detailBtnEl.setAttribute('data-drink-id', item.idDrink);
+
+       // detailBtnEl.setAttribute("id", item.idDrink);
 
         detailBtnEl.innerHTML = " more ";
+
+       // var drinkID = document.getElementById("item.idDrink");
 
         // display to the html
         //container is the whole container named cocktail cards, and we must append the elements we created so it can appear on our html successfully
@@ -190,14 +195,25 @@ function getDrinkApi(drinkName) {
         //when user clicks this button the document.location changes to "./03_Detail.html?id=" + item.idDrink;
         // the item.idDrink is then used to navigate to the next API which is getting in-depth information using the ID of the drink
 
+        console.log(item.idDrink, detailBtnEl);
         detailBtnEl.addEventListener('click', function (event) {
-          document.location = "./03_Detail.html?id=" + item.idDrink;
+          event.preventDefault();
+          document.location = "./03_Detail.html?id=" + event.target.getAttribute('data-drink-id');
         });
         //detailBtnEl is then appended to be considered part of the sectionEl (cocktail-cards)
         sectionEl.appendChild(detailBtnEl);
       }
     });
 }
+
+
+//btns = document.getElementsByClassName("saveBtn");
+//for (var i = 0; i < btns.length; i++) {
+//    btns[i].addEventListener("click", function () {
+  //Add function here
+//    });
+//}
+
 
 //get the drinkname and split it from the 2nd poition (0,1) and use this split tpo include the name the user searched 
 var drinkName = document.location.search.split("=")[1];
