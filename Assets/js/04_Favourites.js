@@ -1,8 +1,8 @@
+//Set Universal Variables 
 var favourites = JSON.parse(localStorage.getItem('favourites')) || [];
 var favouriteEl = document.querySelector(".favourites");
 
-console.log = (favouriteEl);
-
+//Function to Print Saved Favourite Items
 function printFavourites(){
     // create li tag for saving 12 favourite cocktails
     var cocktailOne = document.createElement("li");
@@ -47,20 +47,12 @@ function printFavourites(){
     cocktailTwelve.textContent = favourites[11].cocktail
   };
   
+  //Cear the Local Storage and Remove the Records Saved Previously
   var clearBtnEl = document.querySelector(".clearBtn")
   clearBtnEl.addEventListener("click", function(){
     localStorage.clear();
     favouriteEl.remove();
    });
 
-
-  //Highscores
-  //Clear local storage and remove learders board
-//  var clearEl = document.querySelector(".clearscore"); 
-  
-//  clearEl.addEventListener("click", function() {
-//    localStorage.clear();
-//    leadersEl.remove();
-//  });
-
+//Call printFavourites function
 printFavourites();

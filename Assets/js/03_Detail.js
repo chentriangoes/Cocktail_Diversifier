@@ -66,6 +66,8 @@ heartEl.addEventListener("click", function() {
   console.log(favourites);
   favourites.splice(12);
   localStorage.setItem("favourites",JSON.stringify(favourites));
+
+  document.location = "./04_Favourites.html"
 })
 
 })
