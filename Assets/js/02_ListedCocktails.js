@@ -61,9 +61,6 @@ function getDrinkApi(drinkName) {
 
         detailBtnEl.setAttribute("class", "button is-info");
         detailBtnEl.setAttribute('data-drink-id', item.idDrink);
-
-       // detailBtnEl.setAttribute("id", item.idDrink);
-
         detailBtnEl.innerHTML = " more ";
 
        // var drinkID = document.getElementById("item.idDrink");

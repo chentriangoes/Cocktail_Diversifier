@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receipe Finder | Home</title>
+    <title>Receipe Finder | Favourites</title>
     <!-- Link to BULMA's CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="./Assets/css/style.css">
@@ -21,7 +21,6 @@
                 <form action="./01_Home.html">
                     <input type="submit" value="HOME"/>
                 </form>
-                <a href="./04_Favourites.html">My Favourites</a>
         </nav>
     
         <section class="hero is-primary has-text-centered">
@@ -36,19 +35,34 @@
 
     <main>
         <section class="columns"> <!-- https://bulma.io/documentation/columns/sizes/ -->
-            <div class="column is-full has-text-centered" id="cocktailSearch">
-                <p class="control is-expanded mb-4 column is-half container is-max-desktop"> <!-- https://bulma.io/documentation/form/general/ -->
-                    <input id="inputSearch" class="input is rounded is-large" type="text" placeholder="Cocktail Search" />
-                </p>
-                   
-                <p class="control mb-6">
-                    <button id="searchButton" class="button is-info"> Search </button>
-                </p>
-            </div>
-        </section>
+               <div class="tile is-parent is-4"><!-- https://bulma.io/documentation/layout/tiles/ -->
+                   <div class="tile is-child box"> <!--removed it maybe-->
+                       <figure class="image is-256x256"> <!-- https://bulma.io/documentation/elements/image/ -->
+                           <img src="https://bulma.io/images/placeholders/256x256.png"> <!--replace it with the photo from the API-->
+                       </figure>
+                   </div>
+               </div>
+               
+               <div class="tile is-vertical is-parent is-4">
+                   <div class="tile is-child box has-text-centered">
+                       <p class="title"><strong>My Favourites ❤️<!--get the input from API--></strong></p> 
+                       <ul class="favourites"> <!--up to 12?-->
+                       </ul>
+                   </div>
+                   <button class="clearBtn">Clear</button>
+               </div>
+
+               <div class="tile is-parent is-4">
+                   <div class="tile is-child box"> <!--removed it maybe-->
+                       <figure class="image is-256x256"> <!-- https://bulma.io/documentation/elements/image/ -->
+                           <img src="https://bulma.io/images/placeholders/256x256.png"> <!--replace it with the photo from the API-->
+                       </figure>
+                   </div>
+               </div>
+       </section>
     </main>
 
-    <footer class="footer has-background-grey-lighter">
+    <footer class="footer">
         <div class="content has-text-centered">
           <p>
             <!--add links pls-->
@@ -60,6 +74,6 @@
     </footer>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script type="text/javascript" src="./Assets/js/01_Home.js"></script>
+<script type="text/javascript" src="./Assets/js/04_Favourites.js"></script>
 </body>
 </html>
