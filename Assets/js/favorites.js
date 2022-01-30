@@ -47,14 +47,12 @@ var nameEl = data.drinks[0].strDrink;
           
           //var descriptionCard = document.createElement("p");
 
-        
           detailCard.appendChild(detailEl);
           detailEl.appendChild(descriptionEl);
           descriptionEl.appendChild(nameCard);
           descriptionEl.appendChild(moreInfo);
           detailCard.appendChild(imgCard);
           imgCard.appendChild(displayImg);  
-
 }
 
 

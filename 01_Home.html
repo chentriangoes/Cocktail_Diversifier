@@ -14,13 +14,15 @@
 <body class="has-navbar-fixed-top hero is-fullheight">
     <header class="hero"><!--<div class="column is-full">is-full</div>--> 
         <section class="container is-max-desktop">
-            <h1 class="title is-1 has-text-centered">Life's too short for the same cocktail</h1>
+            <h1 class="title is-1 has-text-centered">Life's too short for the same cocktail, find something different</h1>
         </section>
       
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-                  <form action="./01_Home.html">
-                    <input type="submit" value="HOME"/>
+        <nav class="navbar is-justify-content-space-between" role="navigation" aria-label="main navigation">
+                <form class="ml-3" action="./01_Home.html">
+                    <input class="button is-dark is-light is-outlined" type="submit" value="HOME"/>
                 </form>
+
+                <a class="mr-3 is-size-4" href="./04_Favourites.html">My Favourites</a>
         </nav>
     
         <section class="hero is-primary has-text-centered">
@@ -43,42 +45,8 @@
                 <p class="control mb-6">
                     <button id="searchButton" class="button is-info"> Search </button>
                 </p>
-               
-                <h2 class="subtitle">
-                    My Favourites <strong>🍹</strong> <!--add url linking to the local storage-->
-                </h2>
             </div>
         </section>
-
-        <section class="columns tile is-hidden"> <!-- https://bulma.io/documentation/columns/sizes/ -->
-               <div class="tile is-parent is-4"><!-- https://bulma.io/documentation/layout/tiles/ -->
-                   <div class="tile is-child box"> <!--removed it maybe-->
-                       <figure class="image is-256x256"> <!-- https://bulma.io/documentation/elements/image/ -->
-                           <img  src="https://bulma.io/images/placeholders/256x256.png"> <!--replace it with the photo from the API-->
-                       </figure>
-                   </div>
-               </div>
-               
-               <div class="tile is-vertical is-parent is-4">
-                   <div class="tile is-child box has-text-centered">
-                       <p class="title"><strong>My Favourites ❤️<!--get the input from API--></strong></p> 
-                       <ul> <!--up to 10?-->
-                            <li>AAAAA</li> <!--pls remove it and use javascript for the listed item-->
-                            <li>BBBBB</li> <!--pls remove it and use javascript for the listed item-->
-                            <li>CCCCC</li> <!--pls remove it and use javascript for the listed item-->
-                            <li>DDDDD</li> <!--pls remove it and use javascript for the listed item-->
-                       </ul>
-                   </div>
-               </div>
-
-               <div class="tile is-parent is-4">
-                   <div class="tile is-child box"> <!--removed it maybe-->
-                       <figure class="image is-256x256"> <!-- https://bulma.io/documentation/elements/image/ -->
-                           <img src="https://bulma.io/images/placeholders/256x256.png"> <!--replace it with the photo from the API-->
-                       </figure>
-                   </div>
-               </div>
-       </section>
     </main>
 
     <footer class="footer has-background-grey-lighter">

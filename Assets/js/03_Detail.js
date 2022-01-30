@@ -37,19 +37,37 @@ function getdetailAPI(drinkID) {
           nameCard.setAttribute("class", "title");
           nameCard.innerHTML = nameEl;
 
+          var heartEl = document.createElement("strong");
+          heartEl.setAttribute("id", "saveBtn")
+          heartEl.innerHTML = " ❤️ ";
+          nameCard.appendChild(heartEl); 
+
           var moreInfo = document.createElement("p");
           moreInfo.setAttribute("class", "subtitle");
           moreInfo.innerHTML = infoEl;
-          
-          //var descriptionCard = document.createElement("p");
-
         
 detailCard.appendChild(detailEl);
 detailEl.appendChild(descriptionEl);
 descriptionEl.appendChild(nameCard);
 descriptionEl.appendChild(moreInfo);
 detailCard.appendChild(imgCard);
-imgCard.appendChild(displayImg);  
+imgCard.appendChild(displayImg);
+
+var favourites = JSON.parse(localStorage.getItem('favourites')) || [];
+console.log(favourites);
+
+heartEl.addEventListener("click", function() { 
+  
+  var cocktail = {
+    cocktail: nameEl,
+  };
+  
+  favourites.push(cocktail);
+  console.log(favourites);
+  favourites.splice(12);
+  localStorage.setItem("favourites",JSON.stringify(favourites));
+})
+
 })
 }
 
