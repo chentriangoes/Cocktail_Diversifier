@@ -17,10 +17,13 @@
             <h1 class="title is-1 has-text-centered">Life's too short for the same cocktail, find something different</h1>
         </section>
       
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-                <form action="./01_Home.html">
-                    <input type="submit" value="HOME"/>
-                </form>
+        <nav class="navbar is-justify-content-space-between" role="navigation" aria-label="main navigation">
+            <form class="ml-3" action="./01_Home.html">
+                <input class="button is-dark is-light is-outlined" type="submit" value="HOME"/>
+            </form>
+
+
+            <a class="mr-3 is-size-4" href="./04_Favourites.html">My Favourites</a>
         </nav>
     
         <section class="hero is-primary has-text-centered">
@@ -46,7 +49,7 @@
                <div class="tile is-vertical is-parent is-4">
                    <div class="tile is-child box has-text-centered">
                        <p class="title"><strong>My Favourites ❤️<!--get the input from API--></strong></p> 
-                       <ul class="favourites"> <!--up to 12?-->
+                       <ul class="favourites">
                        </ul>
                    </div>
                    <button class="clearBtn">Clear</button>
