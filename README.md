@@ -34,4 +34,4 @@ FAVOURITES PAGE
 
 ## 🔗 Link
 
-https://chentriangoes.github.io/Recipe_finder/index.html
+https://chentriangoes.github.io/Cocktail_Diversifier/index.html
